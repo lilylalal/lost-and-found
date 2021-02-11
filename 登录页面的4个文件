@@ -1,0 +1,191 @@
+//denglu.js
+// 获取应用实例
+Page({
+
+  /**
+   * 页面的初始数据
+   */
+  data: {
+    username:"",
+    password:""
+  },
+  register:function(e){
+    var that=this
+    if(that.data.username==""){
+      wx.showModal({
+        title: '提示',
+        content: '请输入用户名！',
+        showCancel:false,
+        success (res) {}
+      })
+    }
+    else if(that.data.password==""){
+        wx.showModal({
+          title: '提示',
+          content: '请输入密码!',
+          showCancel:false,
+          success (res) {}
+        })
+      }
+  },
+  usernameinput:function(e){
+    this.data.username=e.detail.value
+  },
+  passwordinput:function(e){
+    this.data.password=e.detail.value
+  },
+  into:function(e){
+    wx.navigateTo({ url: '/pages/index/index', })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面隐藏
+   */
+  onHide: function () {
+    
+  },
+
+  /**
+   * 生命周期函数--监听页面卸载
+   */
+  onUnload: function () {
+    
+  },
+
+  /**
+   * 页面相关事件处理函数--监听用户下拉动作
+   */
+  onPullDownRefresh: function () {
+    
+  },
+
+  /**
+   * 页面上拉触底事件的处理函数
+   */
+  onReachBottom: function () {
+    
+  },
+
+  /**
+   * 用户点击右上角分享
+   */
+  onShareAppMessage: function () {
+    
+  }
+})
+
+
+
+
+//denglu.json
+{
+  "navigationBarTitleText":"登录",
+  "navigationBarBackgroundColor":"#fff",
+  "navigationBarTextStyle":"black"
+}
+
+
+
+//denglu.wxml
+<!--pages/denglu/denglu.wxml-->
+<view class="plus">
+  <view class="f1">
+    <input id="name" placeholder="用户名" class="input" type="text" bindinput="usernameinput"></input>
+  </view>
+  <view class="f1">
+    <input id="psw" placeholder="密码" class="input" type="password" bindinput="passwordinput"></input>
+  </view>
+  <view id="zhuce" class="clicks" bindtap="register">登录</view>
+  <view class="throughweixin" bindtap="into">
+    <!-- <image  class="byweixin" src="/images/weixin.png"></image>
+    <text class="weixin" bindtap="weixindenglu" >微信账号登陆</text> -->
+  </view>
+</view>
+
+
+
+
+
+//denglu.wxss
+/* pages/denglu/denglu.wxss */
+/* pages/login/login.wxss */
+.f1{
+  height: 40px;
+  width: 300px;
+  margin: auto;
+  margin-top:50px;
+  display: flex;
+  flex-direction: row;
+  align-content: center;
+  justify-content: center;
+  background-color: #f2f2f2;
+  border-radius:17px;
+}
+.input{
+  line-height: 25px;
+  font-size:15px;
+  color:black;
+  margin:auto 10rpx;
+  width: 100%;
+}
+.clicks{
+  width: 80%;
+  height: 40px;
+  line-height: 40px;
+  margin:auto;
+  margin-top:60px;
+  margin-left: 35px;
+  background-color: skyblue;
+  color:#000;
+  font-size:20px;
+  text-align:center;
+  border-radius:17px;
+  
+}
+.login{
+  font-size: 13px;
+  color:#000;
+  font-style:"宋体";
+  text-decoration: underline;
+}
+
+/* 
+.weixin{
+
+}
+.byweixin{
+  width: 100px;
+  height: 100px;
+  
+}
+.throughweixin{
+  width: 150px;
+  height: 150px;
+  display: flex;
+  flex-direction: column;
+  margin: auto;
+  margin-top: 100px;
+  margin-left: 130px;
+  margin-right: 100px;
+
+} */
